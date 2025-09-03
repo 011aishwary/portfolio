@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { useState } from 'react';
+import Link from 'next/link';
 
 const Navbar = () => {
 
@@ -16,27 +17,27 @@ const Navbar = () => {
             <div className="glass-specular"></div>
             <div className="glass-content">
                 <ul className="nav-list flex justify-between">
-                    {/* <li><a href="#" className="nav-item  ">Home</a></li> */}
-                    <li><a href="/" className={`nav-item ${selectedItem === "Home" ? 'active' : ''}`}
+                    {/* <li><Link href="#" className="nav-item  ">Home</Link></li> */}
+                    <li><Link href="/" className={`nav-item ${selectedItem === "Home" ? 'active' : ''}`}
                         onClick={() => {
                             handleItemClick("Home");
-                        }}>Home</a></li>
-                    <li><a href="/About" className={`nav-item ${selectedItem === "About" ? 'active' : ''}`}
+                        }}>Home</Link></li>
+                    <li><Link href="/" className={`nav-item ${selectedItem === "About" ? 'active' : ''}`}
                         onClick={() => {
                             handleItemClick("About");
-                        }}>About</a></li>
-                    <li><a href="/Contact" className={`nav-item ${selectedItem === "Contact" ? 'active' : ''}`}
+                        }}>About</Link></li>
+                    <li><Link href="/Contact" className={`nav-item ${selectedItem === "Contact" ? 'active' : ''}`}
                         onClick={() => {
                             handleItemClick("Contact");
-                        }}>Contact</a></li>
-                    <li><a href="/Services" className={`nav-item ${selectedItem === "Services" ? 'active' : ''}`}
+                        }}>Contact</Link></li>
+                    <li><Link href="/Services" className={`nav-item ${selectedItem === "Services" ? 'active' : ''}`}
                         onClick={() => {
                             handleItemClick("Services");
-                        }}>Services</a></li>
-                    {/* <li><a href="#" className="nav-item">About</a></li>
-            <li><a href="#" className="nav-item">Services</a></li>
-            <li><a href="#" className="nav-item">Contact</a></li> */}
-                    {/* <li><a href="#" className="nav-item">Contact</a></li> */}
+                        }}>Services</Link></li>
+                    {/* <li><Link href="#" className="nav-item">About</Link></li>
+            <li><Link href="#" className="nav-item">Services</Link></li>
+            <li><Link href="#" className="nav-item">Contact</Link></li> */}
+                    {/* <li><Link href="#" className="nav-item">Contact</Link></li> */}
                 </ul>
             </div>
         </nav>
