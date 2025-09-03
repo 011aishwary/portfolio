@@ -115,7 +115,7 @@ const SkillsTimeline = () => {
                                 <div className="timeline-dot"></div>
                             </div>
 
-                            <div className="timeline-content">
+                            <div className="timeline-content ">
                                 <div className="timeline-date">{skill.learnedDate}</div>
                                 <h3 className="skill-name">{skill.name}</h3>
                                 <p className="skill-description">{skill.description}</p>
@@ -130,7 +130,7 @@ const SkillsTimeline = () => {
             <style jsx>{`
         .timeline-section {
           padding: 1rem 1rem;
-          background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+          background-color: #170c2b;
           color: #fff;
           font-family: 'Inter', 'Segoe UI', sans-serif;
           position: relative;

@@ -22,48 +22,48 @@ export default function Home() {
     description: "A fully working authentication app with NextAuth.js, supporting multiple providers and secure user sessions.",
     image: "/auth.png", // Replace with your image path
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "JWT", "React"],
-    demoUrl: "https://yourproject.demo",
-    githubUrl: "https://github.com/yourusername/project"
+    demoUrl: "/",
+    githubUrl: "https://www.linkedin.com/in/01aishwary"
   };
   const sampleProject2= {
     title: "To-Do App using MongoDB",
     description: "This is a simple to-do app built with Next.js and MongoDB.",
     image: "/todo.png", // Replace with your image path
     technologies: ["MERN Stack",  "TailwindCSS", "NodeJs", "React"],
-    demoUrl: "https://yourproject.demo",
-    githubUrl: "https://github.com/yourusername/project"
+    demoUrl: "/",
+    githubUrl: "https://www.linkedin.com/in/01aishwary"
   };
   const sampleProject3 = {
     title: "Movie Recommender",
     description: "A full-stack e-commerce solution with payment processing and inventory management.",
     image: "/recommender.png", // Replace with your image path
     technologies: ["Next.js","Numpy", "TailwindCSS", "Python", "Pandas"],
-    demoUrl: "https://yourproject.demo",
-    githubUrl: "https://github.com/yourusername/project"
+    demoUrl: "/",
+    githubUrl: "https://www.linkedin.com/in/01aishwary"
   };
   const sampleProject4 = {
     title: "Eco-Sphere",
     description: "This App is made by me in Hackout 2025 ,  it is a platform where local pepople can report illegal forest cutting and pollution in forest",
     image: "/ecosphere.png", // Replace with your image path
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "Stripe", "Prisma"],
-    demoUrl: "https://yourproject.demo",
-    githubUrl: "https://github.com/yourusername/project"
+    demoUrl: "/",
+    githubUrl: "https://www.linkedin.com/in/01aishwary"
   };
   const sampleProject5 = {
     title: "Get me Chai",
     description: "A crowdfunding platform for creators. Get funded by your fans and followers ",
     image: "/Getmechai.png", // Replace with your image path
     technologies: ["Next.js", "Razorpay", "TailwindCSS", "Payment Gateway", "Mongo DB"],
-    demoUrl: "https://yourproject.demo",
-    githubUrl: "https://github.com/yourusername/project"
+    demoUrl: "/",
+    githubUrl: "https://www.linkedin.com/in/01aishwary"
   };
   const sampleProject6 = {
     title: "URL Shortener",
     description: "A Simple url shortener made using Mongo DB to store  the shorten url in database so that other cannot shorten the url with same link ",
     image: "/URl.png", // Replace with your image path
     technologies: ["Next.js", "Razorpay", "TailwindCSS", "Payment Gateway", "Mongo DB"],
-    demoUrl: "https://yourproject.demo",
-    githubUrl: "https://github.com/yourusername/project"
+    demoUrl: "/",
+    githubUrl: "https://www.linkedin.com/in/01aishwary"
   };
 
 
@@ -186,7 +186,7 @@ export default function Home() {
         <div className="mainheading text-[#f0fff0] playfair_font  text-center text-[18px] pt-8">
           Get To Know Me
         </div>
-        <div className="mainheadpart text-[#f0fff0] inter_font text-center text-6xl pt-4">
+        <div className="mainheadpart text-[#f0fff0] inter_font text-center text-6xl pt-4 mb-6">
           <TextType
             text={["About Me", "My Journey" , "And Skills"]}
             typingSpeed={75}
