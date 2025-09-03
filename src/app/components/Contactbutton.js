@@ -1,5 +1,6 @@
 // components/GitHubButton.jsx
 'use client';
+import Image from 'next/image';
 
 import Link from 'next/link';
 import { useState } from 'react';
@@ -18,7 +19,7 @@ const GitHubButton = ({social}) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className={`github-button ${isHovered ? 'hovered' : ' flex justify-items-center self-center'}`}>
-            <img className='text-center ' src={social.icon} alt="nkd" />
+            <Image className='text-center ' src={social.icon} alt="nkd" width={32} height={32} />
           
         </div>
       </Link>

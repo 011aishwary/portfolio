@@ -77,7 +77,7 @@ export default function Home() {
 
         <div className=" text-white  ">
 
-          <div className="absolute z-10 ">
+          <div className="absolute z-15 ">
             <TargetCursor
               spinDuration={2}
               hideDefaultCursor={true}
@@ -107,7 +107,7 @@ export default function Home() {
                   Data Scientist
                 </div>
               </div>
-              <div className="w-[35vw] text-[#c8c0d5] poppins-medium">I'm a passionate creative technologist who bridges the gap between artistic vision and technical execution. With a deep love for both code and design, I create immersive digital experiences that push the boundaries of what's possible on the web.</div>
+              <div className="w-[35vw] text-[#c8c0d5] poppins-medium">{"I'm"} a passionate creative technologist who bridges the gap between artistic vision and technical execution. With a deep love for both code and design, I create immersive digital experiences that push the boundaries of {"what's"} possible on the web.</div>
             </div>
           </div>
           <div className="absolute z-1 right-0 pr-[15vw] pt-[25vh]">
@@ -148,7 +148,7 @@ export default function Home() {
         </div>
       </div>
       {/* <div className="bg-[#c8c0d5] w-[100vw] h-0.5"></div> */}
-      <div className="sec2 bg-[#060010] relative max-h-fit ">
+      <div id="projects" className="sec2 bg-[#060010] relative max-h-fit ">
         <div className="mainheading blocke text-[] playfair_font  text-center text-[18px] pt-8 text-[#b19eef]">
           Featured Work
         </div>
@@ -182,7 +182,7 @@ export default function Home() {
       </div>
 
       {/* Section 3 */}
-      <div className="sec2 bg-[#060010] relative max-h-fit pb-6">
+      <div id="about" className="sec2 bg-[#060010] relative max-h-fit pb-6">
         <div className="mainheading text-[#f0fff0] playfair_font  text-center text-[18px] pt-8">
           Get To Know Me
         </div>
@@ -205,9 +205,9 @@ export default function Home() {
               Creative Technologist & Digital Innovator
             </div>
             <div className="flex flex-col gap-5  text-[#b0c4de]">
-              <span className="">I'm a passionate creative technologist who bridges the gap between artistic vision and technical execution. With a deep love for both code and design, I create immersive digital experiences that push the boundaries of what's possible on the web.</span>
+              <span className="">{"I'm"} a passionate creative technologist who bridges the gap between artistic vision and technical execution. With a deep love for both code and design, I create immersive digital experiences that push the boundaries of {"what's"} possible on the web.</span>
               <span className="">My journey began with traditional web development, but I quickly discovered my fascination with 3D graphics, WebGL, and interactive animations. This led me to specialize in creating cutting-edge web applications that combine stunning visuals with seamless user experiences.</span>
-              <span className="">When I'm not crafting digital experiences, you'll find me exploring the latest in AI, contributing to open-source projects, or experimenting with new creative coding techniques.</span>
+              <span className="">When {"I'm"} not crafting digital experiences, {"you'll"} find me exploring the latest in AI, contributing to open-source projects, or experimenting with new creative coding techniques.</span>
             </div>
             <div className="grid gap-4 grid-cols-3 mx-auto w-full mt-6">
 
@@ -228,11 +228,11 @@ export default function Home() {
 
 
 
-        <SkillsProgress />
         <div className=" ">
+        <SkillsProgress />
         </div>
 
-        <div className="">
+        <div id="contact" className="">
           <ContactPage />
         </div>
 

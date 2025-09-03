@@ -32,6 +32,7 @@ const BlurText = ({
   const ref = useRef(null);
 
   useEffect(() => {
+    const currentRef = ref.current;
     if (!ref.current) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -44,8 +45,8 @@ const BlurText = ({
     );
     observer.observe(ref.current);
     return () => observer.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [threshold, rootMargin]);
+     
+  }, [threshold, rootMargin, ref]);
 
   const defaultFrom = useMemo(
     () =>

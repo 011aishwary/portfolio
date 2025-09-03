@@ -19,6 +19,7 @@ const SkillsProgress = () => {
   ];
 
   useEffect(() => {
+    const sectionNode = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -30,13 +31,13 @@ const SkillsProgress = () => {
       { threshold: 0.5 } // Trigger when 50% of component is visible
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (sectionNode) {
+      observer.observe(sectionNode);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (sectionNode) {
+        observer.unobserve(sectionNode);
       }
     };
   }, []);

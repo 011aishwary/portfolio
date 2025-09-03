@@ -1,19 +1,19 @@
 // components/SkillsTimeline.jsx
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 const SkillsTimeline = () => {
     const [visibleItems, setVisibleItems] = useState([]);
     const timelineRef = useRef(null);
 
     // Sample skills data with learning dates
-    const skills = [
+    const skills = useMemo(()=> [
         {
             id: 1,
             name: 'HTML/CSS',
             proficiency: 95,
-            learnedDate: 'Jan 2020',
+            learnedDate: 'Jan 2024',
             description: 'Started with web fundamentals',
             icon: '🟧'
         },
@@ -21,53 +21,55 @@ const SkillsTimeline = () => {
             id: 2,
             name: 'JavaScript',
             proficiency: 90,
-            learnedDate: 'Jun 2020',
+            learnedDate: 'Jun 2024',
             description: 'Began interactive web development',
             icon: '🟨'
         },
         {
             id: 3,
+            name: 'Tailwind CSS',
+            proficiency: 87,
+            learnedDate: 'May 2024',
+            description: 'Utility-first CSS framework',
+            icon: '🎨'
+        },
+        {
+            id: 4,
             name: 'React',
             proficiency: 88,
-            learnedDate: 'Feb 2021',
+            learnedDate: 'August 2024',
             description: 'Learned component-based architecture',
             icon: '⚛️'
         },
         {
-            id: 4,
+            id: 5,
             name: 'Next.js',
             proficiency: 85,
-            learnedDate: 'Aug 2021',
+            learnedDate: 'October 2024',
             description: 'Mastered server-side rendering',
             icon: '▲'
         },
         {
-            id: 5,
+            id: 6,
             name: 'Node.js',
             proficiency: 82,
-            learnedDate: 'Dec 2021',
+            learnedDate: 'Dec 2024',
             description: 'Backend JavaScript development',
             icon: '🟢'
         },
-        {
-            id: 6,
-            name: 'TypeScript',
-            proficiency: 80,
-            learnedDate: 'Mar 2022',
-            description: 'Added type safety to JavaScript',
-            icon: '🔷'
-        },
+        
         {
             id: 7,
-            name: 'Tailwind CSS',
-            proficiency: 87,
-            learnedDate: 'May 2022',
-            description: 'Utility-first CSS framework',
-            icon: '🎨'
+            name: 'Machine Leaarning',
+            proficiency: 80,
+            learnedDate: 'Mar 2025',
+            description: 'Started exploring machine learning concepts',
+            icon: '🔷'
         },
-    ];
+    ],[]);
 
     useEffect(() => {
+       const node = timelineRef.current;
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -84,16 +86,16 @@ const SkillsTimeline = () => {
             { threshold: 0.3 }
         );
 
-        if (timelineRef.current) {
-            observer.observe(timelineRef.current);
+        if (node) {
+            observer.observe(node);
         }
 
         return () => {
-            if (timelineRef.current) {
-                observer.unobserve(timelineRef.current);
+            if (node) {
+                observer.unobserve(node);
             }
         };
-    }, []);
+    }, [skills]);
 
     return (
         <section className="timeline-section " ref={timelineRef}>
@@ -332,13 +334,13 @@ const SkillsTimeline = () => {
           }
           
           .timeline-marker {
-            left: 83%;
+            left: 85%;
             transform: translateX(-40px);
           }
           
           .timeline-item:nth-child(even) .timeline-marker {
             left: auto;
-            right: 116%;
+            right: 115%;
             transform: translateX(40px);
           }
           

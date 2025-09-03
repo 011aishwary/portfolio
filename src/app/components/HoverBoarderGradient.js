@@ -23,12 +23,3 @@ const HoverBoarderGradient = () => {
 export default HoverBoarderGradient
 
 
-
-
-
-// const AceternityLogo = () => {
-//   return (
-    
-//   );
-// };
-

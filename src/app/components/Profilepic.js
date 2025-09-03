@@ -2,6 +2,7 @@
 
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+import Image from "next/image";
 
 const Profilepic = () => {
     return (
@@ -19,12 +20,12 @@ const Profilepic = () => {
                     className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
                     Hover over this card to unleash the power of CSS perspective
                 </CardItem> */}
-                <CardItem translateZ="100" className="w-full">
-                    <img
+                <CardItem translateZ="100" className="w-full ">
+                    <Image
                         src="/jeremy2.png"
-                        height="1200"
-                        width="1000"
-                        className="h-[40vh] p-4 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        height={1200}
+                        width={1000}
+                        className="h-[40vh] cursor-target p-4 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                         alt="Profilepic" />
                 </CardItem>
                 {/* <div className="flex justify-between items-center">
