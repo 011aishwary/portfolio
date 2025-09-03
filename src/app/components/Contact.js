@@ -186,20 +186,20 @@ export default function ContactPage() {
                   }}
                 />
                 <GitHubButton social={{
-                    link: "https://github.com/011aishwary",
-                    text: "GitHub",
+                    link: "https://www.instagram.com/01aishwary/",
+                    text: "Instagram",
                     icon: "/instagram.png"
                   }}
                 />
                 <GitHubButton social={{
-                    link: "https://github.com/011aishwary",
-                    text: "GitHub",
+                    link: "https://www.linkedin.com/in/01aishwary",
+                    text: "LinkedIn",
                     icon: "/linkedin.png"
                   }}
                 />
                 <GitHubButton social={{
-                    link: "https://github.com/011aishwary",
-                    text: "GitHub",
+                    link: "https://x.com/01Aishwary",
+                    text: "Twitter",
                     icon: "/twitter.png"
                   }}
                 />
