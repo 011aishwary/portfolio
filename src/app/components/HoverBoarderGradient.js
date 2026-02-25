@@ -10,7 +10,7 @@ const HoverBoarderGradient = () => {
         <HoverBorderGradient
             containerClassName="rounded-full"
             as="button"
-            className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2">
+            className="dark:bg-black cursor-target bg-white text-black dark:text-white flex items-center space-x-2">
             {/* <AceternityLogo /> */}
             
             <span>Explore all projects</span>

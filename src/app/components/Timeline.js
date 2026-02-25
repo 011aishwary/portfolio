@@ -115,7 +115,7 @@ const SkillsTimeline = () => {
                     {skills.map((skill, index) => (
                         <div
                             key={skill.id}
-                            className={`timeline-item ${visibleItems.includes(skill.id) ? 'visible' : ''}`}
+                            className={`timeline-item  ${visibleItems.includes(skill.id) ? 'visible' : ''}`}
                             style={{ '--item-index': index }}
                         >
                              <div className="timeline-marker">

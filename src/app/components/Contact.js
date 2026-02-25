@@ -49,8 +49,8 @@ export default function ContactPage() {
       <div className="max-w-7xl w-full mx-auto">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Touch</span>
+          <h1 className="text-4xl   md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            Get In <span className="text-transparent cursor-target bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Touch</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
             Have a question or want to work together? 
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Contact Information</h2>
 
                   <div className="space-y-6 md:space-y-8">
-                    <div className="flex items-center space-x-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
+                    <div className="flex cursor-target items-center space-x-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
                       <div className="glass-icon flex-shrink-0">
                         <Mail className="w-6 h-6 text-cyan-400" />
                       </div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
+                    <div className="flex cursor-target items-center space-x-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
                       <div className="glass-icon flex-shrink-0">
                         <Phone className="w-6 h-6 text-cyan-400" />
                       </div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
+                    <div className="flex cursor-target items-center space-x-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
                       <div className="glass-icon flex-shrink-0">
                         <MapPin className="w-6 h-6 text-cyan-400" />
                       </div>

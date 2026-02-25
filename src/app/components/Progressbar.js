@@ -55,10 +55,10 @@ const SkillsProgress = () => {
           />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-8 w-full">
           {skills.map((skill, index) => (
-            <div key={index} className="skill px-4 w-full">
-              <div className="skill-header">
+            <div key={index} className="skill px-4 w-full ">
+              <div className="skill-header ">
                 <span className="skill-name">{skill.name}</span>
                 <span className="skill-percentage">{skill.percentage}%</span>
               </div>

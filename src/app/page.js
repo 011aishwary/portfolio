@@ -22,11 +22,11 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 export default function Home() {
   const sampleProject = {
     title: "MindSettler App",
-    description: "A fully working authentication app with NextAuth.js, supporting multiple providers and secure user sessions.",
-    image: "/auth.png", // Replace with your image path
+    description: "A comprehensive mental wellness platform allowing users to book appointments with therapists, track moods, and use journaling tools to achieve mindfulness and emotional balance.",
+    image: "/mindsettler.png", // Replace with your image path
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "JWT", "React"],
-    demoUrl: "/",
-    githubUrl: "https://www.linkedin.com/in/01aishwary"
+    demoUrl: "https://mindsettler-landing-page.vercel.app/",
+    githubUrl: "https://github.com/011aishwary/mindsettler-landing-page"
   };
   const sampleProject2= {
     title: "To-Do App using MongoDB",
@@ -34,14 +34,14 @@ export default function Home() {
     image: "/todo.png", // Replace with your image path
     technologies: ["MERN Stack",  "TailwindCSS", "NodeJs", "React"],
     demoUrl: "/",
-    githubUrl: "https://www.linkedin.com/in/01aishwary"
+    githubUrl: "https://github.com/011aishwary"
   };
   const sampleProject3 = {
     title: "Movie Recommender",
     description: "A full-stack e-commerce solution with payment processing and inventory management.",
-    image: "/recommender.png", // Replace with your image path
+    image: "/movie.png", // Replace with your image path
     technologies: ["Next.js","Numpy", "TailwindCSS", "Python", "Pandas"],
-    demoUrl: "/",
+    demoUrl: "https://movierecommender-three.vercel.app/",
     githubUrl: "https://github.com/011aishwary/movierecommender"
   };
   const sampleProject4 = {
@@ -55,17 +55,17 @@ export default function Home() {
   const sampleProject5 = {
     title: "Get me Chai",
     description: "A crowdfunding platform for creators. Get funded by your fans and followers ",
-    image: "/Getmechai.png", // Replace with your image path
+    image: "/chai.png", // Replace with your image path
     technologies: ["Next.js", "Razorpay", "TailwindCSS", "Payment Gateway", "Mongo DB"],
-    demoUrl: "/",
+    demoUrl: "https://getmeachai-coral.vercel.app/",
     githubUrl: "https://github.com/011aishwary/Get_me_a_chai"
   };
   const sampleProject6 = {
     title: "URL Shortener",
     description: "A Simple url shortener made using Mongo DB to store  the shorten url in database so that other cannot shorten the url with same link ",
-    image: "/URl.png", // Replace with your image path
+    image: "/srtlink.png", // Replace with your image path
     technologies: ["Next.js", "Razorpay", "TailwindCSS", "Payment Gateway", "Mongo DB"],
-    demoUrl: "/",
+    demoUrl: "https://srtlink-olive.vercel.app/",
     githubUrl: "https://github.com/011aishwary/nextauth"
   };
 
@@ -286,7 +286,7 @@ export default function Home() {
         <motion.div 
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className=" inter_font blocke text-[#ffffff] text-center mt-6"
+          className=" inter_font blocke  text-[#ffffff] text-center mt-6"
         >
           <HoverBoarderGradient />
         </motion.div>
@@ -297,7 +297,7 @@ export default function Home() {
         <div className="mainheading text-[#f0fff0] playfair_font  text-center text-[18px] pt-8">
           Get To Know Me
         </div>
-        <div className="mainheadpart text-[#f0fff0] inter_font text-center text-4xl md:text-6xl pt-4 mb-10">
+        <div className="mainheadpart  text-[#f0fff0] inter_font text-center text-4xl md:text-6xl pt-4 mb-10">
           <TextType
             text={["About Me", "My Journey" , "And Skills"]}
             typingSpeed={75}
@@ -342,7 +342,7 @@ export default function Home() {
               <p>
                 My journey began with traditional web development, but I quickly discovered my fascination with <span className="text-[#e2e8f0] underline decoration-[#b19eef]/50 underline-offset-4 decoration-2">3D graphics</span>, WebGL, and interactive animations. This led me to specialize in creating cutting-edge web applications.
               </p>
-              <p className="bg-white/5 p-4 rounded-lg border border-white/5 italic">
+              <p className="bg-white/5 p-4 cursor-target  rounded-lg border border-white/5 italic">
                 "When I'm not crafting digital experiences, you'll find me exploring the latest in AI, contributing to open-source projects, or experimenting with new creative coding techniques."
               </p>
             </div>
@@ -353,7 +353,7 @@ export default function Home() {
                     key={i}
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="cursor-pointer"
+                    className="cursor-pointer  "
                   >
                     <MovingBorderButtons params={skill} />
                   </motion.div>

@@ -15,12 +15,12 @@ const ProjectCard = ({ project }) => {
         >
             <div className="card-inner  ">
                 {/* Image section */}
-                <div className="image-container">
+                <div className="image-container rounded-lg overflow-hidden relative">
                     <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="project-image"
+                        className="project-image rounded-lg transition-transform duration-500 ease-out"
                         style={{
                             objectFit: 'cover',
                             transform: isHovered ? 'scale(1.1)' : 'scale(1)',
@@ -44,13 +44,18 @@ const ProjectCard = ({ project }) => {
                     {/* Project links */}
                     <div className="project-links">
                         {project.demoUrl && (
-                            <Link href={project.demoUrl} className="demo-link">
+                          <>
+                            <Link href={project.demoUrl}  target='_blank' className="demo-link relative flex flex-col group items-center justify-center">
                                 Live Demo
+                            <span className="w-[98%] bottom-0 mt-1 group-hover:scale-x-100 scale-x-0 transition-transform duration-500 origin-center bg-gradient-to-r from-blue-400 to-white absolute h-[1px]"></span>
                             </Link>
+                          </>
                         )}
                         {project.githubUrl && (
-                            <Link href={project.githubUrl} className="github-link">
+                            <Link href={project.githubUrl} target='_blank'  className="github-link relative flex flex-col group items-center justify-center">
                                 GitHub
+                            <span className="w-[98%] bottom-0 mt-1 group-hover:scale-x-100 scale-x-0 transition-transform duration-500 origin-center bg-gradient-to-r from-blue-400 to-white absolute h-[1px]"></span>
+
                             </Link>
                         )}
                     </div>
