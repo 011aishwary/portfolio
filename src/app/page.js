@@ -99,17 +99,20 @@ export default function Home() {
 
   return (
     <div className="poppins-regular overflow-x-hidden bg-[#060010] selection:bg-[#b19eef] selection:text-[#060010]">
-
+      <TargetCursor
+              spinDuration={2}
+              hideDefaultCursor={true}
+            />
       <div className="min-h-screen relative flex flex-col justify-center overflow-hidden py-20">
         
         {/* Background Gradients */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-[#3f1b7f] rounded-full mix-blend-screen filter blur-[150px] opacity-20"></div>
 
         <div className="w-full max-w-[1400px] mx-auto relative z-10 px-4 sm:px-6">
-            <TargetCursor
+            {/* <TargetCursor
               spinDuration={2}
               hideDefaultCursor={true}
-            />
+            /> */}
             
             <div className="flex pt-12  flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
               
@@ -262,7 +265,7 @@ export default function Home() {
                   <TiltedCard
                     imageSrc="/portfolio image.png"
                     altText="Aishwary"
-                    captionText=""
+                    captionText="Aishwary"
                     containerHeight="480px"
                     containerWidth="380px"
                     imageHeight="480px"
@@ -270,7 +273,7 @@ export default function Home() {
                     rotateAmplitude={15}
                     scaleOnHover={1.02}
                     showMobileWarning={false}
-                    showTooltip={false}
+                    showTooltip={true}
                     displayOverlayContent={true}
                     overlayContent={null}
                   />
