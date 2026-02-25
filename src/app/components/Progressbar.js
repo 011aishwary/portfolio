@@ -43,52 +43,52 @@ const SkillsProgress = () => {
   }, []);
 
   return (
-    <section className="skills-section w-[100vw] relative" ref={sectionRef}>
-      <div className="container grid md:grid-cols-2 relative w-[100vw]">
-        <div className="col-span-2 text-center mb-8">
-
-        <BlurText
+    <section className="skills-section w-full relative " ref={sectionRef}>
+      <div className="container relative w-full max-w-6xl mx-auto flex flex-col items-center">
+        <div className="text-center mb-12 w-full">
+          <BlurText
             text="Technical Skills"
             delay={150}
             animateBy="words"
             direction="top"
-            // onAnimationComplete={handleAnimationComplete}
-            className="mainheadpart  inter_font text-center text-6xl pt-4 text-[#b19eef]"
-            />
-            </div>
+            className="mainheadpart inter_font text-center text-4xl md:text-6xl pt-4 text-[#b19eef] inline-block"
+          />
+        </div>
         
-        {skills.map((skill, index) => (
-          <div key={index} className="skill px-4 ">
-            <div className="skill-header">
-              <span className="skill-name">{skill.name}</span>
-              <span className="skill-percentage">{skill.percentage}%</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 w-full">
+          {skills.map((skill, index) => (
+            <div key={index} className="skill px-4 w-full">
+              <div className="skill-header">
+                <span className="skill-name">{skill.name}</span>
+                <span className="skill-percentage">{skill.percentage}%</span>
+              </div>
+              <div className="skill-bar">
+                <div
+                  className={`skill-fill ${isVisible ? 'animate' : ''}`}
+                  style={{ width: isVisible ? `${skill.percentage}%` : '0%' }}
+                ></div>
+              </div>
             </div>
-            <div className="skill-bar">
-              <div 
-                className={`skill-fill ${isVisible ? 'animate' : ''}`}
-                style={{ width: isVisible ? `${skill.percentage}%` : '0%' }}
-              ></div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <style jsx>{`
         .skills-section {
-          padding: 4rem 2rem;
+          padding: 4rem 1rem;
           background: linear-gradient(135deg,  #060010, #060010, #060010);
           color: #fff;
           display: flex;
           justify-content: center;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          width: 100%;
+          overflow: hidden;
         }
         
         .container {
-          display: grid;
-          
+          /* display: grid; handled by tailwind classes now */
           width: 100%;
-          max-width: 98vw;
-          padding: 4rem;
+          padding: 3rem;
           background: #170c2b;
           backdrop-filter: blur(10px);
           border-radius: 20px;
@@ -176,6 +176,8 @@ const SkillsProgress = () => {
           
           .container {
             padding: 1.5rem;
+            width: 95%; /* Make container slightly smaller than viewport width */
+            margin: 0 auto;
           }
           
           h2 {
@@ -185,7 +187,20 @@ const SkillsProgress = () => {
           .skill-bar {
             height: 16px;
           }
+          
+          /* Ensure text doesn't overflow */
+          .skill-name {
+            font-size: 0.9rem;
+          }
         }
+        @media (max-width: 600px) {
+          .skills-section{
+            padding: 1rem 0.2rem;
+          }
+          .container {
+            width: 100%;
+          }
+      }
       `}</style>
     </section>
   );

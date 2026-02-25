@@ -9,11 +9,11 @@ const ProjectCard = ({ project }) => {
 
     return (
         <div
-            className="project-card blocke cursor-target"
+            className="project-card blocke cursor-target "
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="card-inner">
+            <div className="card-inner  ">
                 {/* Image section */}
                 <div className="image-container">
                     <Image
@@ -68,8 +68,7 @@ const ProjectCard = ({ project }) => {
   position: relative;
   width: 100%;
   max-width: 300px;
-  height: 380px;
-  
+  height: 100%;
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -97,11 +96,13 @@ const ProjectCard = ({ project }) => {
   border: 1px solid rgba(255, 255, 255, 0.2);
   overflow: hidden;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .image-container {
   position: relative;
-  width: 100%;
+  flex-shrink: 0;  width: 100%;
   height: 160px;
 
   overflow: hidden;
@@ -132,6 +133,7 @@ const ProjectCard = ({ project }) => {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  flex-grow: 1;
 }
 
 .project-title {
@@ -246,7 +248,7 @@ const ProjectCard = ({ project }) => {
 @media (max-width: 768px) {
   .project-card {
     max-width: 100%;
-    height: 380px;
+    min-height: fit-content;
   }
   
   .project-card:hover {

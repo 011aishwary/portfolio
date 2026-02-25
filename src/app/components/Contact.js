@@ -45,164 +45,103 @@ export default function ContactPage() {
   };
   // #180142, #310089, #470cb3
   return (
-    <div className="min-h-screen bg-gradient-to-br from-#180142 via-#310089 to-#470cb3 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-#180142 via-#310089 to-#470cb3 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+      <div className="max-w-7xl w-full mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+        <div className="text-center mb-12 lg:mb-16">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Touch</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
             Have a question or want to work together? 
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div className="space-y-8 ">
-            {/* Contact Info Card */}
-            {/* <div className=" glass-card p-8 rounded-2xl">
-              <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
-
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4 group">
-                  <div className="glass-icon">
-                    <Mail className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-300 text-sm">Email</p>
-                    <p className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-                      aishwaryg01@gmail.com
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 group">
-                  <div className="glass-icon">
-                    <Phone className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-300 text-sm">Phone</p>
-                    <p className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-                      +91 8795157597
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 group">
-                  <div className="glass-icon">
-                    <MapPin className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-300 text-sm">Address</p>
-                    <p className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-                      C-508 Swami Vivekanand Bhavan , SVNIT Surat
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-            {/* Additional Info */}
-            
-
-            <div className="glass-card p-8 rounded-2xl relative">
+          <div className="space-y-8 h-full flex flex-col">
+            <div className="glass-card p-6 md:p-8 rounded-2xl relative flex-grow">
               {/* Glowing effect */}
               <div className="absolute -inset-1 bg-[#0a27b2] rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
-              <div className="relative">
-                <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
+              <div className="relative h-full flex flex-col justify-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Contact Information</h2>
 
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-4 group">
-                      <div className="glass-icon">
+                  <div className="space-y-6 md:space-y-8">
+                    <div className="flex items-center space-x-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
+                      <div className="glass-icon flex-shrink-0">
                         <Mail className="w-6 h-6 text-cyan-400" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-gray-300 text-sm">Email</p>
-                        <p className="text-white font-medium group-hover:text-cyan-400 transition-colors">
+                        <p className="text-white font-medium group-hover:text-cyan-400 transition-colors break-words text-sm md:text-base">
                           aishwaryg01@gmail.com
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-4 group">
-                      <div className="glass-icon">
+                    <div className="flex items-center space-x-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
+                      <div className="glass-icon flex-shrink-0">
                         <Phone className="w-6 h-6 text-cyan-400" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-gray-300 text-sm">Phone</p>
-                        <p className="text-white font-medium group-hover:text-cyan-400 transition-colors">
+                        <p className="text-white font-medium group-hover:text-cyan-400 transition-colors text-sm md:text-base">
                           +91 8795157597
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-4 group">
-                      <div className="glass-icon">
+                    <div className="flex items-center space-x-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
+                      <div className="glass-icon flex-shrink-0">
                         <MapPin className="w-6 h-6 text-cyan-400" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-gray-300 text-sm">Address</p>
-                        <p className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-                          C-508 Swami Vivekanand Bhavan , SVNIT Surat
+                        <p className="text-white font-medium group-hover:text-cyan-400 transition-colors text-sm md:text-base">
+                          C-508 Swami Vivekanand Bhavan, SVNIT Surat
                         </p>
                       </div>
                     </div>
                   </div>
-                
-                
-
               </div>
             </div>
-            {/* <div className="glass-card p-8 rounded-2xl relative">
-             
-              <div className="absolute -inset-1 bg-[#0a27b2] rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-
-              <div className="relative">
-                <h2 className="text-2xl font-bold text-white mb-6">Working Hours</h2>
-                <p className="text-gray-300 z-10">
-                  Monday - Friday: 9:00 AM - 6:00 PM<br />
-                  Saturday: 10:00 AM - 4:00 PM<br />
-                  Sunday: Closed
-                </p>
-
-              </div>
-            </div> */}
           </div>
 
-          {/* Contact Form */}
-          <div className="glass-card p-8 rounded-2xl relative">
-            {/* Glowing effect */}
-            <div className="absolute -inset-1 bg-[#0a27b2] rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          {/* Social Media Section - Reusing structure for balance */}
+          <div className="space-y-8 h-full flex flex-col">
+            <div className="glass-card p-6 md:p-8 rounded-2xl relative flex-grow flex flex-col justify-center">
+              {/* Glowing effect */}
+              <div className="absolute -inset-1 bg-[#0a27b2] rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
-            <div className="relative">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">Social Media</h2>
-              <div className="flex justify-center space-x-4">
-                <GitHubButton social={{
-                    link: "https://github.com/011aishwary",
-                    text: "GitHub",
-                    icon: "/github.png"
-                  }}
-                />
-                <GitHubButton social={{
-                    link: "https://www.instagram.com/01aishwary/",
-                    text: "Instagram",
-                    icon: "/instagram.png"
-                  }}
-                />
-                <GitHubButton social={{
-                    link: "https://www.linkedin.com/in/01aishwary",
-                    text: "LinkedIn",
-                    icon: "/linkedin.png"
-                  }}
-                />
-                <GitHubButton social={{
-                    link: "https://x.com/01Aishwary",
-                    text: "Twitter",
-                    icon: "/twitter.png"
-                  }}
-                />
+              <div className="relative w-full">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 max-sm:mb-6 text-center">Social Media</h2>
+                <div className="flex flex-wrap  justify-center gap-2 md:gap-6">
+                  <GitHubButton social={{
+                      link: "https://github.com/011aishwary",
+                      text: "GitHub",
+                      icon: "/github.png"
+                    }}
+                  />
+                  <GitHubButton social={{
+                      link: "https://www.instagram.com/01aishwary/",
+                      text: "Instagram",
+                      icon: "/instagram.png"
+                    }}
+                  />
+                  <GitHubButton social={{
+                      link: "https://www.linkedin.com/in/01aishwary",
+                      text: "LinkedIn",
+                      icon: "/linkedin.png"
+                    }}
+                  />
+                  <GitHubButton social={{
+                      link: "https://x.com/01Aishwary",
+                      text: "Twitter",
+                      icon: "/twitter.png"
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
