@@ -1,7 +1,8 @@
 "use client";
 
 import Particles from "./components/InteractiveParticles";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import HoverBoarderGradient from "./components/HoverBoarderGradient";
 import MovingBorderButtons from "./components/MovingBorderButtons";
 import ContactPage from "./components/Contact";
@@ -20,6 +21,26 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 // Sample project data
 export default function Home() {
+  const [pillTextIndex, setPillTextIndex] = useState(0);
+  const pillTexts = ["Open for Work", "Open for Collaboration"];
+
+  const [roleTextIndex, setRoleTextIndex] = useState(0);
+  const roleTexts = ["Data Scientist", "Web Developer"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPillTextIndex((prev) => (prev + 1) % pillTexts.length);
+    }, 3000); // Increased to 3s to allow animation to complete
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleTextIndex((prev) => (prev + 1) % roleTexts.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const sampleProject = {
     title: "MindSettler App",
     description: "A comprehensive mental wellness platform allowing users to book appointments with therapists, track moods, and use journaling tools to achieve mindfulness and emotional balance.",
@@ -102,15 +123,28 @@ export default function Home() {
                   transition={{ duration: 0.8 }}
                   className=" w-fit flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
                 >
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                  <span className="text-[#c8c0d5] w-fit text-xs font-medium tracking-wider uppercase">Open for Work</span>
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></span>
+                  <div className="h-5 overflow-hidden relative flex items-center w-[180px] pr-10">
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={pillTextIndex}
+                        initial={{ y: 20, opacity: 0, scale: 0.8 }}
+                        animate={{ y: 0, opacity: 1, scale: 1 }}
+                        exit={{ y: -20, opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.5, ease: "backInOut" }}
+                        className="text-[#c8c0d5] absolute flex items-center text-xs font-medium tracking-wider uppercase whitespace-nowrap "
+                      >
+                        {pillTexts[pillTextIndex]}
+                      </motion.span>
+                    </AnimatePresence>
+                  </div>
                 </motion.div>
 
                 {/* Main Heading */}
                 <div className="relative">
                   <SplitText
                     text="Hi, I'm Aishwary"
-                    className="montserrat-semibold text-6xl sm:text-6xl md:text-8xl text-white leading-[1.1] tracking-tight"
+                    className="stardos-stencil-bold  text-6xl sm:text-6xl md:text-8xl text-white leading-[1.1] tracking-tight"
                     delay={100}
                     duration={0.6}
                     ease="power3.out"
@@ -127,9 +161,9 @@ export default function Home() {
                     transition={{ delay: 0.8, duration: 0.8 }}
                     className="mt-4"
                   >
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#b0c4de] font-light">
-                      I build <span className="font-bold cursor-target text-[#b19eef] italic relative inline-block">
-                        digital realities
+                    <h2 className="text-2xl max-md:text-center sm:text-3xl  md:text-4xl text-[#b0c4de] font-light">
+                      I transmute vision into <span className="font-bold cursor-target text-[#b19eef] italic relative inline-block">
+                        living interactive art
                         <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#b19eef] opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none">
                           <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
                         </svg>
@@ -143,10 +177,10 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 backdrop-blur-sm max-w-xl"
+                  className="p-6 rounded-2xl cursor-target bg-gradient-to-br from-white/5 to-transparent border border-white/10 backdrop-blur-sm max-w-xl"
                 >
-                  <p className="text-[#c8c0d5] cursor-target text-lg leading-relaxed">
-                    A passionate Creative Technologist & Data Scientist bridging the gap between artistic vision and technical execution.
+                  <p className="text-[#c8c0d5]  text-lg leading-relaxed">
+                    Infusing the logic of Data Science with the creativity of Web Development to build smarter, faster, and more intuitive digital ecosystems.
                   </p>
                 </motion.div>
 
@@ -206,7 +240,20 @@ export default function Home() {
                      <div className="bg-[#060010]/80 backdrop-blur-md border cursor-target border-blue-400/30 p-4 rounded-xl shadow-2xl transform rotate-3">
                         <div className="flex items-center gap-2">
                           <span className="w-3 h-3 bg-blue-400 rounded-full"></span>
-                          <span className="text-white text-sm font-bold">Data Scientist</span>
+                          <div className="h-5 overflow-hidden relative flex items-center w-[110px]">
+                            <AnimatePresence mode="wait">
+                              <motion.span
+                                key={roleTextIndex}
+                                initial={{ x: 20, opacity: 0, scale: 0.8 }}
+                                animate={{ x: 0, opacity: 1, scale: 1 }}
+                                exit={{ x: -20, opacity: 0, scale: 0.8 }}
+                                transition={{ duration: 0.5, ease: "backInOut" }}
+                                className="text-white absolute text-sm font-bold whitespace-nowrap"
+                              >
+                                {roleTexts[roleTextIndex]}
+                              </motion.span>
+                            </AnimatePresence>
+                          </div>
                         </div>
                      </div>
                   </div>
@@ -236,13 +283,13 @@ export default function Home() {
         {/* Ambient Particles */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Particles
-            particleCount={200}
+            particleCount={100}
             colors={['#b19eef', '#ffffff']}
             minSize={1}
             maxSize={3}
             speed={0.5}
             connectParticles={true}
-            mouseInteractionRadius={150}
+            mouseInteractionRadius={100}
           />
         </div>
       </div>
@@ -312,7 +359,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full lg:w-1/2 border-0 rounded-2xl h-[60vh] lg:h-[80vh] overflow-auto custom-scrollbar"
+            className="w-full max-sm:h-120 lg:w-1/2 border-0 rounded-2xl h-[60vh] lg:h-[80vh] overflow-auto custom-scrollbar"
           >
             <SkillsTimeline />
           </motion.div>

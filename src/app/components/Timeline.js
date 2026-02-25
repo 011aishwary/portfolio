@@ -104,8 +104,8 @@ const SkillsTimeline = () => {
 
     return (
         <section className="timeline-section" ref={timelineRef}>
-            <div className="container">
-              <div className="flex flex-col items-center justify-center">
+            <div className="container flex flex-col" >
+              <div className="flex flex-col items-cente justify-cente">
 
                 <h2>My Learning Journey</h2>
                 <p className="subtitle">A timeline of my skills development</p>
@@ -330,6 +330,7 @@ const SkillsTimeline = () => {
         }
         
         @media (max-width: 767px) {
+        
             h2 {
                 font-size: 2rem;
             }

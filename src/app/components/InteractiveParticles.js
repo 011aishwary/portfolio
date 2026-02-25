@@ -6,12 +6,12 @@ import React, { useEffect, useRef } from 'react';
 
 
 const InteractiveParticles = ({
-  particleCount = 20,
+  particleCount = 50,
   minSize = 1,
   maxSize = 3,
   speed = 0.5,
   colors = ['#b19eef', '#ffffff'],
-  mouseInteractionRadius = 20,
+  mouseInteractionRadius = 5,
   clickInteractionRadius = 200,
   connectParticles = true,
   connectionDistance = 100,
