@@ -14,6 +14,7 @@ import SplitText from "./components/Splitext";
 import BlurText from "./components/Decryptedtext";
 import SkillsTimeline from "./components/Timeline";
 import TextType from "./components/TextType";
+import Loader from "./components/Loader";
 // import GitHubButton from "./components/Contactbutton";
 
 
@@ -21,6 +22,7 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 // Sample project data
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const [pillTextIndex, setPillTextIndex] = useState(0);
   const pillTexts = ["Open for Work", "Open for Collaboration"];
 
@@ -98,11 +100,18 @@ export default function Home() {
   ];
 
   return (
-    <div className="poppins-regular overflow-x-hidden bg-[#060010] selection:bg-[#b19eef] selection:text-[#060010]">
-      <TargetCursor
-              spinDuration={2}
-              hideDefaultCursor={true}
-            />
+    <>
+      <AnimatePresence mode="wait">
+        {isLoading && <Loader key="loader" onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+
+      <div className="poppins-regular overflow-x-hidden bg-[#060010] selection:bg-[#b19eef] selection:text-[#060010]">
+        <div className="hidden lg:block">
+          <TargetCursor
+            spinDuration={2}
+            hideDefaultCursor={true}
+          />
+        </div>
       <div className="min-h-screen relative flex flex-col justify-center overflow-hidden py-20">
         
         {/* Background Gradients */}
@@ -235,7 +244,7 @@ export default function Home() {
                 >
                   <div className="absolute -top-10 -left-10 z-20 hidden md:block">
                      <div className="bg-[#060010]/80 backdrop-blur-md border border-[#b19eef]/30 p-4 rounded-xl shadow-2xl transform -rotate-6">
-                        <code className="text-[#b19eef] text-sm">git commit -m "feat: new idea"</code>
+                        <code className="text-[#b19eef] text-sm">git commit -m &quot;feat: new idea&quot;</code>
                      </div>
                   </div>
 
@@ -387,13 +396,13 @@ export default function Home() {
 
             <div className="flex flex-col gap-6 text-[#b0c4de] text-base leading-relaxed text-center md:text-left">
               <p className="border-l-2 border-[#b19eef]/30 pl-4 md:pl-0 md:border-l-0 md:border-l-transparent">
-                <span className="text-white font-semibold">I'm a passionate builder</span> who bridges the gap between artistic vision and technical execution. With a deep love for both code and design, I create immersive digital experiences that push the boundaries of what's possible on the web.
+                <span className="text-white font-semibold">I&apos;m a passionate builder</span> who bridges the gap between artistic vision and technical execution. With a deep love for both code and design, I create immersive digital experiences that push the boundaries of what&apos;s possible on the web.
               </p>
               <p>
                 My journey began with traditional web development, but I quickly discovered my fascination with <span className="text-[#e2e8f0] underline decoration-[#b19eef]/50 underline-offset-4 decoration-2">3D graphics</span>, WebGL, and interactive animations. This led me to specialize in creating cutting-edge web applications.
               </p>
               <p className="bg-white/5 p-4 cursor-target  rounded-lg border border-white/5 italic">
-                "When I'm not crafting digital experiences, you'll find me exploring the latest in AI, contributing to open-source projects, or experimenting with new creative coding techniques."
+                &quot;When I&apos;m not crafting digital experiences, you&apos;ll find me exploring the latest in AI, contributing to open-source projects, or experimenting with new creative coding techniques.&quot;
               </p>
             </div>
             
@@ -434,5 +443,6 @@ export default function Home() {
 
 
     </div>
+    </>
   );
 }
