@@ -52,11 +52,11 @@ export default function Home() {
     githubUrl: "https://github.com/011aishwary/mindsettler-landing-page"
   };
   const sampleProject2= {
-    title: "To-Do App using MongoDB",
-    description: "This is a simple to-do app built with Next.js and MongoDB.",
-    image: "/todo.png", // Replace with your image path
-    technologies: ["MERN Stack",  "TailwindCSS", "NodeJs", "React"],
-    demoUrl: "/",
+    title: "Fin Track",
+    description: "This is a financial management application that helps users track their expenses, set budgets, and visualize their spending habits through interactive charts and insights.Also it has a RAG chatbot which can answer any query realted to finance and also can give insights on your spending habits",
+    image: "/FinTrack.png", // Replace with your image path
+    technologies: ["Fast api","RAG chatbot", "Pandas" ,"Numpy" , "Python",  "TailwindCSS", "NextJs", ],
+    demoUrl: "https://fin-track-dun-nine.vercel.app/",
     githubUrl: "https://github.com/011aishwary"
   };
   const sampleProject3 = {
