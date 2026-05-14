@@ -43,7 +43,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const sampleProject = {
+  const project = {
     title: "MindSettler App",
     description: "A comprehensive mental wellness platform allowing users to book appointments with therapists, track moods, and use journaling tools to achieve mindfulness and emotional balance.",
     image: "/mindsettler.png", // Replace with your image path
@@ -51,7 +51,7 @@ export default function Home() {
     demoUrl: "https://mindsettler-landing-page.vercel.app/",
     githubUrl: "https://github.com/011aishwary/mindsettler-landing-page"
   };
-  const sampleProject2= {
+  const project2= {
     title: "Fin Track",
     description: "This is a financial management application that helps users track their expenses, set budgets, and visualize their spending habits through interactive charts and insights.Also it has a RAG chatbot which can answer any query realted to finance and also can give insights on your spending habits",
     image: "/FinTrack.png", // Replace with your image path
@@ -59,7 +59,7 @@ export default function Home() {
     demoUrl: "https://fin-track-dun-nine.vercel.app/",
     githubUrl: "https://github.com/011aishwary"
   };
-  const sampleProject3 = {
+  const project3 = {
     title: "Movie Recommender",
     description: "A full-stack e-commerce solution with payment processing and inventory management.",
     image: "/movie.png", // Replace with your image path
@@ -67,15 +67,15 @@ export default function Home() {
     demoUrl: "https://movierecommender-three.vercel.app/",
     githubUrl: "https://github.com/011aishwary/movierecommender"
   };
-  const sampleProject4 = {
-    title: "Eco-Sphere",
-    description: "This App is made by me in Hackout 2025 ,  it is a platform where local pepople can report illegal forest cutting and pollution in forest",
-    image: "/ecosphere.png", // Replace with your image path
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "Stripe", "Prisma"],
-    demoUrl: "/",
-    githubUrl: "https://github.com/011aishwary"
+  const project4 = {
+    title: "Support Chatbot",
+    description: "This app allows anyone to make Smart chatbot for there website in just few steps , Name , EMail and Knowledge Base and you are good to go' ",
+    image: "/support_chatbot.png", // Replace with your image path
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "HuggingFace Space", "Cloudinary"],
+    demoUrl: "https://support-chat-bot-gray.vercel.app",
+    githubUrl: "https://github.com/011aishwary/Support-ChatBot"
   };
-  const sampleProject5 = {
+  const project5 = {
     title: "Get me Chai",
     description: "A crowdfunding platform for creators. Get funded by your fans and followers ",
     image: "/chai.png", // Replace with your image path
@@ -83,7 +83,7 @@ export default function Home() {
     demoUrl: "https://getmeachai-coral.vercel.app/",
     githubUrl: "https://github.com/011aishwary/Get_me_a_chai"
   };
-  const sampleProject6 = {
+  const project6 = {
     title: "URL Shortener",
     description: "A Simple url shortener made using Mongo DB to store  the shorten url in database so that other cannot shorten the url with same link ",
     image: "/srtlink.png", // Replace with your image path
@@ -324,7 +324,7 @@ export default function Home() {
           A collection of innovative projects that showcase the intersection of creative design, cutting-edge technology, and immersive user experiences.
         </div>
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 p-4 justify-items-center items-stretch content-center mt-8 mb-8 max-w-7xl mx-auto">
-          {[sampleProject, sampleProject2, sampleProject3, sampleProject4, sampleProject5, sampleProject6].map((project, index) => (
+          {[project, project2, project3, project4, project5, project6].map((project, index) => (
             <motion.div
               key={index}
               className="h-full w-full flex justify-center"
