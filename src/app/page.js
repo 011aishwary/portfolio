@@ -15,6 +15,7 @@ import BlurText from "./components/Decryptedtext";
 import SkillsTimeline from "./components/Timeline";
 import TextType from "./components/TextType";
 import Loader from "./components/Loader";
+import Link from "next/link";
 // import GitHubButton from "./components/Contactbutton";
 
 
@@ -51,11 +52,11 @@ export default function Home() {
     demoUrl: "https://mindsettler-landing-page.vercel.app/",
     githubUrl: "https://github.com/011aishwary/mindsettler-landing-page"
   };
-  const project2= {
+  const project2 = {
     title: "Fin Track",
     description: "This is a financial management application that helps users track their expenses, set budgets, and visualize their spending habits through interactive charts and insights.Also it has a RAG chatbot which can answer any query realted to finance and also can give insights on your spending habits",
     image: "/FinTrack.png", // Replace with your image path
-    technologies: ["Fast api","RAG chatbot", "Pandas" ,"Numpy" , "Python",  "TailwindCSS", "NextJs", ],
+    technologies: ["Fast api", "RAG chatbot", "Pandas", "Numpy", "Python", "TailwindCSS", "NextJs",],
     demoUrl: "https://fin-track-dun-nine.vercel.app/",
     githubUrl: "https://github.com/011aishwary"
   };
@@ -63,7 +64,7 @@ export default function Home() {
     title: "Movie Recommender",
     description: "A full-stack e-commerce solution with payment processing and inventory management.",
     image: "/movie.png", // Replace with your image path
-    technologies: ["Next.js","Numpy", "TailwindCSS", "Python", "Pandas"],
+    technologies: ["Next.js", "Numpy", "TailwindCSS", "Python", "Pandas"],
     demoUrl: "https://movierecommender-three.vercel.app/",
     githubUrl: "https://github.com/011aishwary/movierecommender"
   };
@@ -112,24 +113,24 @@ export default function Home() {
             hideDefaultCursor={true}
           />
         </div>
-      <div className="min-h-screen relative flex flex-col justify-center overflow-hidden py-20">
-        
-        {/* Background Gradients */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-[#3f1b7f] rounded-full mix-blend-screen filter blur-[150px] opacity-20"></div>
+        <div className="min-h-screen relative flex flex-col justify-center overflow-hidden py-20">
 
-        <div className="w-full max-w-[1400px] mx-auto relative z-10 px-4 sm:px-6">
+          {/* Background Gradients */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-[#3f1b7f] rounded-full mix-blend-screen filter blur-[150px] opacity-20"></div>
+
+          <div className="w-full max-w-[1400px] mx-auto relative z-10 px-4 sm:px-6">
             {/* <TargetCursor
               spinDuration={2}
               hideDefaultCursor={true}
             /> */}
-            
+
             <div className="flex pt-12  flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
-              
+
               {/* Left Column: Text & Context */}
               <div className="w-full lg:w-1/2  flex flex-col gap-8 max-lg:gap-12 z-20">
-                
+
                 {/* Decorative Pill */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, width: "100%" }}
                   animate={{ opacity: 1, width: "fit-content" }}
                   transition={{ duration: 0.8 }}
@@ -166,8 +167,8 @@ export default function Home() {
                     threshold={0.1}
                     rootMargin="0px"
                   />
-                  
-                  <motion.div 
+
+                  <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.8, duration: 0.8 }}
@@ -185,7 +186,7 @@ export default function Home() {
                 </div>
 
                 {/* Description Card */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 }}
@@ -197,20 +198,24 @@ export default function Home() {
                 </motion.div>
 
                 {/* CTA Buttons */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.2 }}
                   className="flex flex-wrap gap-4 mt-2"
                 >
-                  <button className="group relative cursor-target px-8 py-3 bg-[#b19eef] text-[#060010] font-bold rounded-full overflow-hidden transition-all hover:scale-105">
-                    <span className="relative z-10">Download CV</span>
-                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                  </button>
-                  
+
+                  <Link
+                    href="/Resume_Walm.pdf">
+                    <button className="group relative cursor-target px-8 py-3 bg-[#b19eef] text-[#060010] font-bold rounded-full overflow-hidden transition-all hover:scale-105">
+                      <span className="relative z-10">Download CV</span>
+                      <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    </button>
+                  </Link>
+
                   <div className="flex gap-3">
                     {socialLinks.map((link, index) => (
-                      <a 
+                      <a
                         key={index}
                         href={link.href}
                         className="w-12 h-12 flex cursor-target items-center justify-center rounded-full border border-white/20 text-[#b0c4de] hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-300"
@@ -225,49 +230,49 @@ export default function Home() {
               {/* Right Column: Visual Centerpiece */}
               <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end z-10 mt-12 lg:mt-0">
                 {/* Orbital Rings Background */}
-                <motion.div 
+                <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/5 rounded-full"
                 ></motion.div>
-                <motion.div 
+                <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-[#b19eef]/20 rounded-full border-dashed"
                 ></motion.div>
 
                 {/* Floating Elements on Orbit */}
-                <motion.div 
-                   animate={{ y: [0, -20, 0] }}
-                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                   className="relative"
+                <motion.div
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative"
                 >
                   <div className="absolute -top-10 -left-10 z-20 hidden md:block">
-                     <div className="bg-[#060010]/80 backdrop-blur-md border border-[#b19eef]/30 p-4 rounded-xl shadow-2xl transform -rotate-6">
-                        <code className="text-[#b19eef] text-sm">git commit -m &quot;feat: new idea&quot;</code>
-                     </div>
+                    <div className="bg-[#060010]/80 backdrop-blur-md border border-[#b19eef]/30 p-4 rounded-xl shadow-2xl transform -rotate-6">
+                      <code className="text-[#b19eef] text-sm">git commit -m &quot;feat: new idea&quot;</code>
+                    </div>
                   </div>
 
                   <div className="absolute -bottom-5 -right-5 z-20 hidden md:block">
-                     <div className="bg-[#060010]/80 backdrop-blur-md border cursor-target border-blue-400/30 p-4 rounded-xl shadow-2xl transform rotate-3">
-                        <div className="flex items-center gap-2">
-                          <span className="w-3 h-3 bg-blue-400 rounded-full"></span>
-                          <div className="h-5 overflow-hidden relative flex items-center w-[110px]">
-                            <AnimatePresence mode="wait">
-                              <motion.span
-                                key={roleTextIndex}
-                                initial={{ x: 20, opacity: 0, scale: 0.8 }}
-                                animate={{ x: 0, opacity: 1, scale: 1 }}
-                                exit={{ x: -20, opacity: 0, scale: 0.8 }}
-                                transition={{ duration: 0.5, ease: "backInOut" }}
-                                className="text-white absolute text-sm font-bold whitespace-nowrap"
-                              >
-                                {roleTexts[roleTextIndex]}
-                              </motion.span>
-                            </AnimatePresence>
-                          </div>
+                    <div className="bg-[#060010]/80 backdrop-blur-md border cursor-target border-blue-400/30 p-4 rounded-xl shadow-2xl transform rotate-3">
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 bg-blue-400 rounded-full"></span>
+                        <div className="h-5 overflow-hidden relative flex items-center w-[110px]">
+                          <AnimatePresence mode="wait">
+                            <motion.span
+                              key={roleTextIndex}
+                              initial={{ x: 20, opacity: 0, scale: 0.8 }}
+                              animate={{ x: 0, opacity: 1, scale: 1 }}
+                              exit={{ x: -20, opacity: 0, scale: 0.8 }}
+                              transition={{ duration: 0.5, ease: "backInOut" }}
+                              className="text-white absolute text-sm font-bold whitespace-nowrap"
+                            >
+                              {roleTexts[roleTextIndex]}
+                            </motion.span>
+                          </AnimatePresence>
                         </div>
-                     </div>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Main Card */}
@@ -289,126 +294,126 @@ export default function Home() {
                 </motion.div>
               </div>
             </div>
-            
-        </div>
 
-        {/* Ambient Particles */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Particles
-            particleCount={100}
-            colors={['#b19eef', '#ffffff']}
-            minSize={1}
-            maxSize={3}
-            speed={0.5}
-            connectParticles={true}
-            mouseInteractionRadius={100}
-          />
-        </div>
-      </div>
-      {/* <div className="bg-[#c8c0d5] w-[100vw] h-0.5"></div> */}
-      <div id="projects" className="sec2 bg-[#060010] relative max-h-fit py-10">
-        <div className="mainheading blocke text-[] playfair_font  text-center text-[18px] pt-8 text-[#b19eef]">
-          Featured Work
-        </div>
-        <div className="flex justify-center px-4 ">
-          <BlurText
-            text="Projects and Creations"
-            delay={150}
-            animateBy="words"
-            direction="top"
-            // onAnimationComplete={handleAnimationComplete}
-            className="mainheadpart  blocke inter_font text-center text-4xl md:text-6xl pt-4 text-[#b19eef]"
-          />
-        </div>
-        <div className="mainheadpart2 blocke inter_font flex justify-self-center text-[#b0c4de] text-center text-[14px] pt-6 w-[90vw] md:w-[40vw]">
-          A collection of innovative projects that showcase the intersection of creative design, cutting-edge technology, and immersive user experiences.
-        </div>
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 p-4 justify-items-center items-stretch content-center mt-8 mb-8 max-w-7xl mx-auto">
-          {[project, project2, project3, project4, project5, project6].map((project, index) => (
-            <motion.div
-              key={index}
-              className="h-full w-full flex justify-center"
-              whileHover={{ y: -10, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <ProjectCard project={project} />
-            </motion.div>
-          ))}
-        </div>
-        <div className="mainheadpart2 blocke blocke inter_font flex justify-self-center cursor-target text-[#b0c4de] text-center text-[14px] px-4">
-          Want to see more? Check out my complete portfolio on GitHub.
-        </div>
-        <motion.div 
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className=" inter_font blocke  text-[#ffffff] text-center mt-6"
-        >
-          <HoverBoarderGradient />
-        </motion.div>
-      </div>
+          </div>
 
-      {/* Section 3 */}
-      <div id="about" className="sec2 bg-[#060010] relative max-h-fit pb-10 px-4 md:px-0">
-        <div className="mainheading text-[#f0fff0] playfair_font  text-center text-[18px] pt-8">
-          Get To Know Me
+          {/* Ambient Particles */}
+          <div className="absolute inset-0 w-full h-full z-0">
+            <Particles
+              particleCount={100}
+              colors={['#b19eef', '#ffffff']}
+              minSize={1}
+              maxSize={3}
+              speed={0.5}
+              connectParticles={true}
+              mouseInteractionRadius={100}
+            />
+          </div>
         </div>
-        <div className="mainheadpart  text-[#f0fff0] inter_font text-center text-4xl md:text-6xl pt-4 mb-10">
-          <TextType
-            text={["About Me", "My Journey" , "And Skills"]}
-            typingSpeed={75}
-            pauseDuration={1500}
-            showCursor={true}
-            cursorCharacter="|"
-          />
-        </div>
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-10 px-4 max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="w-full max-sm:h-120 lg:w-1/2 border-0 rounded-2xl h-[60vh] lg:h-[80vh] overflow-auto custom-scrollbar"
+        {/* <div className="bg-[#c8c0d5] w-[100vw] h-0.5"></div> */}
+        <div id="projects" className="sec2 bg-[#060010] relative max-h-fit py-10">
+          <div className="mainheading blocke text-[] playfair_font  text-center text-[18px] pt-8 text-[#b19eef]">
+            Featured Work
+          </div>
+          <div className="flex justify-center px-4 ">
+            <BlurText
+              text="Projects and Creations"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              // onAnimationComplete={handleAnimationComplete}
+              className="mainheadpart  blocke inter_font text-center text-4xl md:text-6xl pt-4 text-[#b19eef]"
+            />
+          </div>
+          <div className="mainheadpart2 blocke inter_font flex justify-self-center text-[#b0c4de] text-center text-[14px] pt-6 w-[90vw] md:w-[40vw]">
+            A collection of innovative projects that showcase the intersection of creative design, cutting-edge technology, and immersive user experiences.
+          </div>
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 p-4 justify-items-center items-stretch content-center mt-8 mb-8 max-w-7xl mx-auto">
+            {[project, project2, project3, project4, project5, project6].map((project, index) => (
+              <motion.div
+                key={index}
+                className="h-full w-full flex justify-center"
+                whileHover={{ y: -10, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="mainheadpart2 blocke blocke inter_font flex justify-self-center cursor-target text-[#b0c4de] text-center text-[14px] px-4">
+            Want to see more? Check out my complete portfolio on GitHub.
+          </div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className=" inter_font blocke  text-[#ffffff] text-center mt-6"
           >
-            <SkillsTimeline />
+            <HoverBoarderGradient />
           </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="w-full lg:w-1/2 flex flex-col justify-center relative"
-          >
-            {/* Decorative background element behind text */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#b19eef]/10 rounded-full blur-3xl -z-10"></div>
-            
-            <h3 className="playfair_font text-[#f0fff0] text-3xl mb-2 text-center md:text-left relative inline-block w-fit mx-auto md:mx-0">
-               Creative Technologist
-               <span className="block h-1 w-1/2 bg-gradient-to-r from-[#b19eef] to-transparent mt-2 rounded-full"></span>
-            </h3>
-            
-            <div className="text-[#b19eef] font-medium tracking-wider text-sm mb-6 text-center md:text-left uppercase">
-               & Digital Innovator
-            </div>
+        </div>
 
-            <div className="flex flex-col gap-6 text-[#b0c4de] text-base leading-relaxed text-center md:text-left">
-              <p className="border-l-2 border-[#b19eef]/30 pl-4 md:pl-0 md:border-l-0 md:border-l-transparent">
-                <span className="text-white font-semibold">I&apos;m a passionate builder</span> who bridges the gap between artistic vision and technical execution. With a deep love for both code and design, I create immersive digital experiences that push the boundaries of what&apos;s possible on the web.
-              </p>
-              <p>
-                My journey began with traditional web development, but I quickly discovered my fascination with <span className="text-[#e2e8f0] underline decoration-[#b19eef]/50 underline-offset-4 decoration-2">3D graphics</span>, WebGL, and interactive animations. This led me to specialize in creating cutting-edge web applications.
-              </p>
-              <p className="bg-white/5 p-4 cursor-target  rounded-lg border border-white/5 italic">
-                &quot;When I&apos;m not crafting digital experiences, you&apos;ll find me exploring the latest in AI, contributing to open-source projects, or experimenting with new creative coding techniques.&quot;
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-8">
-               {["Next JS", "Machine Learning", "Full Stack"].map((skill, i) => (
-                  <motion.div 
+        {/* Section 3 */}
+        <div id="about" className="sec2 bg-[#060010] relative max-h-fit pb-10 px-4 md:px-0">
+          <div className="mainheading text-[#f0fff0] playfair_font  text-center text-[18px] pt-8">
+            Get To Know Me
+          </div>
+          <div className="mainheadpart  text-[#f0fff0] inter_font text-center text-4xl md:text-6xl pt-4 mb-10">
+            <TextType
+              text={["About Me", "My Journey", "And Skills"]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+            />
+          </div>
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-10 px-4 max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="w-full max-sm:h-120 lg:w-1/2 border-0 rounded-2xl h-[60vh] lg:h-[80vh] overflow-auto custom-scrollbar"
+            >
+              <SkillsTimeline />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="w-full lg:w-1/2 flex flex-col justify-center relative"
+            >
+              {/* Decorative background element behind text */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#b19eef]/10 rounded-full blur-3xl -z-10"></div>
+
+              <h3 className="playfair_font text-[#f0fff0] text-3xl mb-2 text-center md:text-left relative inline-block w-fit mx-auto md:mx-0">
+                Creative Technologist
+                <span className="block h-1 w-1/2 bg-gradient-to-r from-[#b19eef] to-transparent mt-2 rounded-full"></span>
+              </h3>
+
+              <div className="text-[#b19eef] font-medium tracking-wider text-sm mb-6 text-center md:text-left uppercase">
+                & Digital Innovator
+              </div>
+
+              <div className="flex flex-col gap-6 text-[#b0c4de] text-base leading-relaxed text-center md:text-left">
+                <p className="border-l-2 border-[#b19eef]/30 pl-4 md:pl-0 md:border-l-0 md:border-l-transparent">
+                  <span className="text-white font-semibold">I&apos;m a passionate builder</span> who bridges the gap between artistic vision and technical execution. With a deep love for both code and design, I create immersive digital experiences that push the boundaries of what&apos;s possible on the web.
+                </p>
+                <p>
+                  My journey began with traditional web development, but I quickly discovered my fascination with <span className="text-[#e2e8f0] underline decoration-[#b19eef]/50 underline-offset-4 decoration-2">3D graphics</span>, WebGL, and interactive animations. This led me to specialize in creating cutting-edge web applications.
+                </p>
+                <p className="bg-white/5 p-4 cursor-target  rounded-lg border border-white/5 italic">
+                  &quot;When I&apos;m not crafting digital experiences, you&apos;ll find me exploring the latest in AI, contributing to open-source projects, or experimenting with new creative coding techniques.&quot;
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-8">
+                {["Next JS", "Machine Learning", "Full Stack"].map((skill, i) => (
+                  <motion.div
                     key={i}
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
@@ -416,33 +421,33 @@ export default function Home() {
                   >
                     <MovingBorderButtons params={skill} />
                   </motion.div>
-               ))}
-            </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-10"
+          >
+            <SkillsProgress />
           </motion.div>
+
+          <div id="contact" className="mt-10">
+            <ContactPage />
+          </div>
+
+
+
         </div>
-
-
-
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-10"
-        >
-          <SkillsProgress />
-        </motion.div>
-
-        <div id="contact" className="mt-10">
-          <ContactPage />
-        </div>
-
 
 
       </div>
-
-
-    </div>
     </>
   );
 }
