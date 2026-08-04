@@ -15,6 +15,7 @@ import BlurText from "./components/Decryptedtext";
 import SkillsTimeline from "./components/Timeline";
 import TextType from "./components/TextType";
 import Loader from "./components/Loader";
+import RollingStatusText from "./components/RollingStatusText";
 import Link from "next/link";
 // import GitHubButton from "./components/Contactbutton";
 
@@ -24,25 +25,6 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 // Sample project data
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [pillTextIndex, setPillTextIndex] = useState(0);
-  const pillTexts = ["Open for Work", "Open for Collaboration"];
-
-  const [roleTextIndex, setRoleTextIndex] = useState(0);
-  const roleTexts = ["Data Scientist", "Web Developer"];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPillTextIndex((prev) => (prev + 1) % pillTexts.length);
-    }, 3000); // Increased to 3s to allow animation to complete
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRoleTextIndex((prev) => (prev + 1) % roleTexts.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   const project = {
     title: "MindSettler App",
@@ -136,21 +118,7 @@ export default function Home() {
                   transition={{ duration: 0.8 }}
                   className=" w-fit flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
                 >
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></span>
-                  <div className="h-5 overflow-hidden relative flex items-center w-[180px] pr-10">
-                    <AnimatePresence mode="wait">
-                      <motion.span
-                        key={pillTextIndex}
-                        initial={{ y: 20, opacity: 0, scale: 0.8 }}
-                        animate={{ y: 0, opacity: 1, scale: 1 }}
-                        exit={{ y: -20, opacity: 0, scale: 0.8 }}
-                        transition={{ duration: 0.5, ease: "backInOut" }}
-                        className="text-[#c8c0d5] absolute flex items-center text-xs font-medium tracking-wider uppercase whitespace-nowrap "
-                      >
-                        {pillTexts[pillTextIndex]}
-                      </motion.span>
-                    </AnimatePresence>
-                  </div>
+                  <RollingStatusText type="pill" />
                 </motion.div>
 
                 {/* Main Heading */}
@@ -256,28 +224,14 @@ export default function Home() {
                   <div className="absolute -bottom-5 -right-5 z-20 hidden md:block">
                     <div className="bg-[#060010]/80 backdrop-blur-md border cursor-target border-blue-400/30 p-4 rounded-xl shadow-2xl transform rotate-3">
                       <div className="flex items-center gap-2">
-                        <span className="w-3 h-3 bg-blue-400 rounded-full"></span>
-                        <div className="h-5 overflow-hidden relative flex items-center w-[110px]">
-                          <AnimatePresence mode="wait">
-                            <motion.span
-                              key={roleTextIndex}
-                              initial={{ x: 20, opacity: 0, scale: 0.8 }}
-                              animate={{ x: 0, opacity: 1, scale: 1 }}
-                              exit={{ x: -20, opacity: 0, scale: 0.8 }}
-                              transition={{ duration: 0.5, ease: "backInOut" }}
-                              className="text-white absolute text-sm font-bold whitespace-nowrap"
-                            >
-                              {roleTexts[roleTextIndex]}
-                            </motion.span>
-                          </AnimatePresence>
-                        </div>
+                        <RollingStatusText type="role" />
                       </div>
                     </div>
                   </div>
 
                   {/* Main Card */}
                   <TiltedCard
-                    imageSrc="/portfolio image.png"
+                    imageSrc="/white_back_profile.jpg"
                     altText="Aishwary"
                     captionText="Aishwary"
                     containerHeight="480px"
