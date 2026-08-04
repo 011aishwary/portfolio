@@ -72,6 +72,17 @@ export default function TiltedCard({
     rotateFigcaption.set(0);
   }
 
+  const imageFilter = {
+    initial: {
+      filter: 'saturate(0.98) contrast(0.95) brightness(0.9)',
+      boxShadow: '0 0 0 rgba(177, 158, 239, 0)'
+    },
+    hover: {
+      filter: 'saturate(1.05) contrast(1.05) brightness(1.05) hue-rotate(6deg)',
+      boxShadow: '0 0 45px rgba(177, 158, 239, 0.35)'
+    }
+  };
+
   return (
     <figure
       ref={ref}
@@ -104,6 +115,9 @@ export default function TiltedCard({
           src={imageSrc}
           alt={altText}
           className="absolute cursor-target top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
+          initial={imageFilter.initial}
+          whileHover={imageFilter.hover}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
           style={{
             width: imageWidth,
             height: imageHeight
